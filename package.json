@@ -4,9 +4,12 @@
   "description": "une plateforme de jeux de rôles et de tournois",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron ."
   },
   "keywords": [],
-  "author": "Elouan Bruzek, Najib CHAFEI",
-  "license": "ISC"
+  "author": "Elouan BRUZEK, Najib CHAFEI",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^22.0.3"
+  }
 }
