@@ -1,12 +1,12 @@
 {
   "name": "platemania",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "une plateforme de jeux de rôles et de tournois",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Elouan Bruzek, Najib CHAFEI",
   "license": "ISC"
 }
