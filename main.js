@@ -54,6 +54,6 @@ application.use((err, req, res, next) => {
     res.status(500).render('Erreur, regarder le terminal !');
 });
 
-app.listen(port, () => {
+application.listen(port, () => {
     console.log('Le serveur est lancé ! sur le port' + port)
 });
