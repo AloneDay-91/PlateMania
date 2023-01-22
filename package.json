@@ -10,6 +10,9 @@
   "author": "Elouan BRUZEK, Najib CHAFEI",
   "license": "ISC",
   "dependencies": {
-    "electron": "^22.0.3"
+    "electron": "^22.0.3",
+    "express": "^4.18.2",
+    "express-handlebars": "^6.0.6",
+    "path": "^0.12.7"
   }
 }
