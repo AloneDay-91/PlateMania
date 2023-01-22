@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, Menu, MenuItem } = require('electron')
 const path = require('path')
 
 function createWindow () {
@@ -6,7 +6,8 @@ function createWindow () {
     width: 2000,
     height: 1200,
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
+      preload: path.join(__dirname, 'preload.js'),
+      spellcheck: true
     }
   })
   win.loadFile('./src/index.html')
@@ -27,3 +28,8 @@ app.on('window-all-closed', () => {
     app.quit()
   }
 })
+
+// Permet le retrait du devtools
+const menu = new Menu()
+menu.append(new MenuItem({}))
+Menu.setApplicationMenu(menu);
