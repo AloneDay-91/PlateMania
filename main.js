@@ -9,7 +9,6 @@ function createWindow () {
       preload: path.join(__dirname, 'preload.js')
     }
   })
-
   win.loadFile('./src/index.html')
 }
 
