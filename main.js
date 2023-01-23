@@ -1,45 +1,17 @@
-const { app, BrowserWindow, Menu, MenuItem, ipcMain } = require('electron')
+const { app, BrowserWindow, Menu, MenuItem } = require('electron')
 const path = require('path')
-const ipc = ipcMain
 
 function createWindow () {
   const win = new BrowserWindow({
-    width: 1650,
-    height: 900,
-    frame: false,
-    transparent: false,
-    show: true,
+    width: 2000,
+    height: 1200,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
-      spellcheck: true,
-      nodeIntegration: true,
-      contextIsolation: false,
-      devTools: true,
-      enableRemoteModule: true,
+      spellcheck: true
     }
   })
+
   win.loadFile('index.html')
-
-// MININMIZED WINDOW
-  ipc.on('minimizeApp', () => {
-    console.log('minimizeApp')
-    win.minimize()
-  })
-
-  // MAXIMIZED RESTORE WINDOW
-  ipc.on('maxResBtn', () => {
-    if (win.isMaximized()) {
-      win.unmaximize()
-    } else {
-      win.maximize()
-    }
-  })
-
-  // CLOSE WINDOW
-  ipc.on('closeApp', () => {
-    console.log('closeApp')
-    win.close()
-  })
 }
 
 app.whenReady().then(() => {
@@ -57,3 +29,8 @@ app.on('window-all-closed', () => {
     app.quit()
   }
 })
+
+// Permet le retrait du devtools
+const menu = new Menu()
+menu.append(new MenuItem({}))
+Menu.setApplicationMenu(menu);
